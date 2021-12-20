@@ -1,4 +1,4 @@
-function ServerPage() {
+function UpdateServerPage() {
     return(
         <>
             <div>server page</div>
@@ -6,4 +6,4 @@ function ServerPage() {
     )
 }
 
-export default ServerPage
+export default UpdateServerPage

@@ -1,0 +1,16 @@
+.server-container {
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.server-container p {
+    padding: 0 10px;
+}
+
+.server-container button {
+    margin: 5px;
+}

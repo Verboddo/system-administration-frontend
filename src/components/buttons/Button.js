@@ -1,4 +1,4 @@
-function DeleteButton({onClick, children, className, type}) {
+function Button({onClick, children, className, type}) {
     return(
         <button
             type={type}
@@ -10,4 +10,4 @@ function DeleteButton({onClick, children, className, type}) {
     )
 }
 
-export default DeleteButton
+export default Button
