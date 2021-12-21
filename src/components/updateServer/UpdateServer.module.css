@@ -1,9 +1,20 @@
 .update-server-container {
     padding: 10px 10px;
-    display: flex;
+    background-color: #818181;
+    width: 1024px;
 }
 
 .update-server-input-field {
     padding: 5px;
+    background-color: #818181;
+}
 
+.update-server-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.update-server-container input {
+    margin: 5px;
 }

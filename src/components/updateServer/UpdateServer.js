@@ -7,7 +7,7 @@ import axios from "axios";
 
 const UpdateServer = ({id}) => {
 
-    const {register, handleSubmit} = useForm()
+    const { register, handleSubmit, formState: {errors, isDirty, isValid} } = useForm({mode: 'onBlur'})
 
     const [error, setError] = useState(false)
 
@@ -35,7 +35,7 @@ const UpdateServer = ({id}) => {
     return (
         <div className={styles["update-server-container"]}>
             <form
-                className={styles["update-server-container"]}
+                className={styles["update-server-form"]}
                 onSubmit={handleSubmit(onFormSubmit)}
             >
                 <label htmlFor="update-server">
@@ -45,8 +45,12 @@ const UpdateServer = ({id}) => {
                         type="text"
                         placeholder="ip address"
                         registerName="ipAddress"
-                        required={true}
+                        required="Ip-address cannot  be empty"
                         register={register}
+                        errors={errors}
+                        id="ipAddress"
+                        pattern={/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}$/}
+                        patternMessage="this is not an valid ip-address"
                     >
                         Ip-address:
                     </InputField>
@@ -56,8 +60,10 @@ const UpdateServer = ({id}) => {
                         type="text"
                         placeholder="server name"
                         registerName="serverName"
-                        required={true}
+                        required="Server name cannot  be empty"
                         register={register}
+                        errors={errors}
+                        id="serverName"
                     >
                         Sever name:
                     </InputField>
@@ -65,6 +71,7 @@ const UpdateServer = ({id}) => {
                         className={styles["create-server-button"]}
                         type="submit"
                         onClick={() => refreshPage()}
+                        disabled={!isDirty || !isValid}
                     >
                         Update Server
                     </Button>

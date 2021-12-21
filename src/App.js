@@ -9,23 +9,24 @@ function App() {
     return (
         <>
             <Navigation/>
-            <Routes>
-                <Route
-                    exact path="/"
-                    element={<HomePage/>}>
-                </Route>
+            <div className="page-container">
+                <Routes>
+                    <Route
+                        exact path="/"
+                        element={<HomePage/>}>
+                    </Route>
 
-                <Route
-                    exact path="/update-server-page"
-                    element={<UpdateServerPage/>}>
-                </Route>
+                    <Route
+                        exact path="/update-server-page"
+                        element={<UpdateServerPage/>}>
+                    </Route>
 
-                <Route
-                    exact path="/create-server-page"
-                    element={<CreateServerPage/>}>
-                </Route>
-            </Routes>
-
+                    <Route
+                        exact path="/create-server-page"
+                        element={<CreateServerPage/>}>
+                    </Route>
+                </Routes>
+            </div>
 
         </>
     );

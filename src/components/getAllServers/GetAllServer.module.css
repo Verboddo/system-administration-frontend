@@ -1,16 +1,26 @@
 .server-container {
-    border-style: solid;
+    border: 2px solid #B3B3B3;
     display: flex;
     justify-content: space-between;
-    width: 1024px;
     flex-wrap: wrap;
+    max-width: 1024px;
     margin-bottom: 10px;
+    background-color: #C8C8C8;
 }
 
 .server-container p {
     padding: 0 10px;
+    background-color: #C8C8C8;
 }
 
 .server-container button {
     margin: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.server-container button:hover {
+    color: #f1f1f1;
 }

@@ -4,7 +4,7 @@ function HomePage() {
 
     return (
         <>
-            <div>Homepage</div>
+            <div>Servers overview</div>
             <GetAllServers/>
         </>
     )

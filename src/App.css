@@ -1,3 +1,15 @@
 #root {
     margin-left: 200px;
 }
+
+html {
+    background-color: #E8E5DA;
+}
+
+.page-container {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1224px;
+}

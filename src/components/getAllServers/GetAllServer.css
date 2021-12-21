@@ -4,7 +4,5 @@ section div.info {
 
 section div.info.active {
     display: flex;
-    border-style: solid;
     width: 1024px;
-    margin: 5px 0;
 }

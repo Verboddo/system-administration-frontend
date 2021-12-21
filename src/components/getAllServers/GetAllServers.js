@@ -74,7 +74,7 @@ function GetAllServers() {
 
                         <div className={active === result.id ? "info active" : "info"}>
                             <UpdateServer
-                            id={result.id}
+                                id={result.id}
                             />
                         </div>
                     </section>

@@ -8,7 +8,7 @@ import {useState} from "react";
 
 const CreateSever = () => {
 
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, formState: {errors, isDirty, isValid} } = useForm({mode: 'onBlur'})
     const navigate = useNavigate()
 
     const [error, setError] = useState(false)
@@ -44,8 +44,12 @@ const CreateSever = () => {
                         type="text"
                         placeholder="ip address"
                         registerName="ipAddress"
-                        required={true}
-                     register={register}
+                        required="Ip-address cannot  be empty"
+                        register={register}
+                        errors={errors}
+                        id="ipAddress"
+                        pattern={/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}$/}
+                        patternMessage="this is not an valid ip-address"
                     >
                         ip-address:
                     </InputField>
@@ -55,14 +59,17 @@ const CreateSever = () => {
                         type="text"
                         placeholder="server name"
                         registerName="serverName"
-                        required={true}
+                        required="Server name cannot  be empty"
                         register={register}
+                        errors={errors}
+                        id="serverName"
                     >
-                        Ip-address:
+                        Server name:
                     </InputField>
                     <Button
                         className={styles["create-server-button"]}
                         type="submit"
+                        disabled={!isDirty || !isValid}
                     >
                         Create server
                     </Button>
